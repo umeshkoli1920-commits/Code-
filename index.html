@@ -91,39 +91,34 @@ function moveNo() {
     no.style.left = Math.random() * (window.innerWidth - no.offsetWidth) + "px";
     no.style.top = Math.random() * (window.innerHeight - no.offsetHeight) + "px";
 }
-
+<script>
 function sayYes() {
-    document.body.innerHTML = `
-        <div style="
-            height:100vh;
-            display:flex;
-            flex-direction:column;
-            justify-content:center;
-            align-items:center;
-            background:linear-gradient(135deg,#ff758c,#ff7eb3);
-            color:white;
-            text-align:center;
-            padding:20px;">
-            <h1>Sanu ko chan 😍💖</h1>
-            <h2>You just said YES 💍</h2>
-            <h3>I promise to love you forever ❤️</h3>
+    const music = document.getElementById("bgMusic");
+    music.volume = 0.8;
+    music.play().catch(err => console.log(err));
 
-            <a href="https://wa.me/?text=💖%20Sanu%20ko%20chan,%20I%20love%20you!%20You%20just%20made%20my%20world%20complete%20💍❤️"
-               target="_blank"
-               style="
-                margin-top:20px;
-                padding:12px 25px;
-                background:#25D366;
-                color:white;
-                border-radius:30px;
-                font-size:18px;
-                text-decoration:none;">
-               Share on WhatsApp 💚
-            </a>
-        </div>
+    document.querySelector(".container").innerHTML = `
+        <h1>Sanu ko chan 😍💖</h1>
+        <h2>You just said YES 💍</h2>
+        <h3>I promise to love you forever ❤️</h3>
+
+        <a href="https://wa.me/?text=💖%20Sanu%20ko%20chan,%20I%20love%20you!%20You%20just%20made%20my%20world%20complete%20💍❤️"
+           target="_blank"
+           style="
+            margin-top:20px;
+            padding:12px 25px;
+            background:#25D366;
+            color:white;
+            border-radius:30px;
+            font-size:18px;
+            text-decoration:none;">
+           Share on WhatsApp 💚
+        </a>
     `;
     startFireworks();
 }
+</script>
+
 
 function startFireworks() {
     setInterval(() => {
