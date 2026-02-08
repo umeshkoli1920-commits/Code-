@@ -72,7 +72,8 @@ button {
 
 <body>
 
-<audio autoplay loop>
+<!-- AUDIO (must have id, no autoplay) -->
+<audio id="bgMusic" loop>
     <source src="love.mp3" type="audio/mpeg">
 </audio>
 
@@ -91,11 +92,11 @@ function moveNo() {
     no.style.left = Math.random() * (window.innerWidth - no.offsetWidth) + "px";
     no.style.top = Math.random() * (window.innerHeight - no.offsetHeight) + "px";
 }
-<script>
+
 function sayYes() {
     const music = document.getElementById("bgMusic");
     music.volume = 0.8;
-    music.play().catch(err => console.log(err));
+    music.play();
 
     document.querySelector(".container").innerHTML = `
         <h1>Sanu ko chan 😍💖</h1>
@@ -115,10 +116,9 @@ function sayYes() {
            Share on WhatsApp 💚
         </a>
     `;
+
     startFireworks();
 }
-</script>
-
 
 function startFireworks() {
     setInterval(() => {
